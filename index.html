@@ -4,71 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tourism Guide Malaysia - Home</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <style>
   body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 header {
     background-color: #f8f9fa;
-            background-image: url('https://image.slidesdocs.com/responsive-images/background/colorful-independence-day-star-and-moon-pattern-flag-festival-powerpoint-background_6ab4fcf0c8__960_540.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            padding: 20px 0;
-        }
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 0;
+}
 
-        .navbar-brand {
-            font-weight: bold;
-        }
+.navbar-brand {
+  font-weight: bold;
+  
+}
 
-        .home-section {
-            padding: 50px 0;
-            background-image: url('https://image.slidesdocs.com/responsive-images/background/colorful-independence-day-star-and-moon-pattern-flag-festival-powerpoint-background_6ab4fcf0c8__960_540.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
+.home-section {
+    padding: 50px 0;
+    background-image: url('https://image.slidesdocs.com/responsive-images/background/colorful-independence-day-star-and-moon-pattern-flag-festival-powerpoint-background_6ab4fcf0c8__960_540.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
-        .home-section h1,
-        .home-section p {
-            color: #fff; /* Set text color to white for good contrast */
-        }
+.home-section h1,
+.home-section p {
+    color: #fff; /* Set text color to white for good contrast */
+}
 
-        .home-section h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
+.home-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
 
-        .home-section p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
+.home-section p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
 
-        footer {
-            background-color: #343a40;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
+.footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
 
-        /* Style for first part of text */
-        .first-part {
-            color: #fff; /* Set color for first part of text */
-        }
+.btn-custom {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Primary button color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-        /* Style for second part of text */
-        .second-part {
-            color: #000; /* Set color for second part of text */
-        }
+.btn-custom:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+.container {
+    width:0 0 100%;
+    padding: 0 15px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center align columns */
+}
+
+.col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 10px;
+    margin-bottom: 20px; /* Add margin between columns */
+}
+
+.col-md-6 img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.custom-navbar-brand {
+    color:black;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 1rem;
+    
+}
+
 
 </style>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Tourism Guide Malaysia</a>
-            
+        <nav>
+            <div class="container">
+                <a class="custom-navbar-brand" href="#">Tourism Guide Malaysia</a>
+
+            </div>
+        </nav>
+    </header>
 
     <main>
         <section class="home-section">
@@ -77,58 +122,30 @@ header {
                     <div class="col-md-6">
                         <h1>Welcome to Tourism Guide Malaysia</h1>
                         <p>Discover the beauty and culture of Malaysia with our comprehensive guide.</p>
-                        <a href="http://127.0.0.1:3002/endpoint_unsaved/Untitled-2" class="btn btn-primary">Explore Now</a>
+                        <a href="http://127.0.0.1:3000/Explore Destinations.html" class="btn-custom">Explore Now</a>
                     </div>
                     <div class="col-md-6">
-                        <img src="https://asset-a.grid.id/crop/0x0:0x0/700x465/photo/2023/10/04/malaysiajpg-20231004121700.jpg" alt="Malaysia Landscape" class="img-fluid">
+                        <img src="https://asset-a.grid.id/crop/0x0:0x0/700x465/photo/2023/10/04/malaysiajpg-20231004121700.jpg" alt="Malaysia Landscape">
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="footer">
         <div class="container">
             <p>&copy; 2024 Tourism Guide Malaysia. All rights reserved.</p>
         </div>
     </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var homeSection = document.querySelector('.home-section');
-            var textColorElements = homeSection.querySelectorAll('h1, p');
-    
-            // Function to determine brightness of a color
-            function brightness(r, g, b) {
-                return (r * 299 + g * 587 + b * 114) / 1000;
-            }
-    
-            // Function to set text color based on background brightness
-            function setTextColor() {
-                var backgroundColor = window.getComputedStyle(homeSection).backgroundColor;
-                var rgbValues = backgroundColor.match(/\d+/g);
-                var brightnessValue = brightness(parseInt(rgbValues[0]), parseInt(rgbValues[1]), parseInt(rgbValues[2]));
-    
-                // If background brightness is above a threshold, set text color to black, else set to white
-                var textColor = (brightnessValue > 125) ? '#000' : '#fff';
-    
-                // Apply text color to elements
-                textColorElements.forEach(function(element) {
-                    element.style.color = textColor;
-                });
-            }
-    
-            // Call setTextColor function initially and on window resize
-            setTextColor();
-            window.addEventListener('resize', setTextColor);
-        });
-    </script>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
 </body>
 </html>
+
+
+
+
+
 
 
 
